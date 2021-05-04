@@ -26,6 +26,18 @@ public class ProductSummary {
     }
 
     public int getNumberAboveTarget() {
-        return 0;
+        return numberofsalesabovetarget;
+    }
+
+    public int getNumberBelowTarget() {
+        return numberofsalesbelowtarget;
+    }
+
+    public int getSalesvalume() {
+        return salesvalume;
+    }
+
+    public void setSalesvalume(int salesvalume) {
+        this.salesvalume = salesvalume;
     }
 }
