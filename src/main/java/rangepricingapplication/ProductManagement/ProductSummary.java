@@ -16,12 +16,16 @@ public class ProductSummary {
     int numberofsalesbelowtarget;
     int salesvalume;
     int rank; // will be done later
-    
+
     public ProductSummary(Product p){
-        
+
         numberofsalesabovetarget = p.getNumberOfProductSalesAboveTarget();
         salesvalume = p.getOrderPricePerformance();
         subjectproduct = p; //keeps track of the product itself not as well;
-        
+
+    }
+
+    public int getNumberAboveTarget() {
+        return 0;
     }
 }
