@@ -7,8 +7,8 @@ public class SalesSummary {
     int pricePerformance;
 
     public SalesSummary(SalesManProfile smp) {
-        pricePerformance=smp.getPricePerformance();
-        salesvalume=smp.getSalesVolume();
+        pricePerformance=smp.calcSalesPricePerf();
+        salesvalume=smp.calcSalesVolume();
        salesMan = smp;
     }
 

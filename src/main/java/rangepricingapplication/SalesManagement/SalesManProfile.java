@@ -1,6 +1,8 @@
 package rangepricingapplication.SalesManagement;
 
 import rangepricingapplication.Business.Business;
+import rangepricingapplication.OrderManagement.Order;
+import rangepricingapplication.OrderManagement.OrderItem;
 import rangepricingapplication.Personnel.EmployeeProfile;
 import rangepricingapplication.ProductManagement.Product;
 
@@ -9,18 +11,17 @@ import java.util.ArrayList;
 public class SalesManProfile {
     EmployeeProfile employee;
     Business business;
-    Integer salesVolume;
-    Integer pricePerformance;
-    ArrayList<Product> salesProduct;
+
+    ArrayList<OrderItem> salesProduct;
 
     public SalesManProfile(EmployeeProfile employee) {
         this.employee = employee;
         salesProduct=new ArrayList<>();
     }
 
-    public void  addProduct4Sale(Product product)
+    public void  addProduct4Sale(OrderItem orderItem)
     {
-        salesProduct.add(product);
+        salesProduct.add(orderItem);
     }
 
     public Business getBusiness() {
@@ -31,19 +32,25 @@ public class SalesManProfile {
         this.business = business;
     }
 
-    public Integer getSalesVolume() {
-        return salesVolume;
+
+    public int calcSalesVolume() {
+        int sum=0;
+        for(OrderItem orderItem:salesProduct)
+        {
+           sum+= orderItem.getOrderItemTotal();
+        }
+
+        return sum;
     }
 
-    public void setSalesVolume(Integer salesVolume) {
-        this.salesVolume = salesVolume;
-    }
+    public int calcSalesPricePerf()
+    {
+        int sum=0;
+        for(OrderItem orderItem:salesProduct)
+        {
+            sum+= orderItem.calculatePricePerformance();
+        }
 
-    public Integer getPricePerformance() {
-        return pricePerformance;
-    }
-
-    public void setPricePerformance(Integer pricePerformance) {
-        this.pricePerformance = pricePerformance;
+        return sum;
     }
 }

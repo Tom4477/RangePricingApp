@@ -1,23 +1,30 @@
 package rangepricingapplication.ProductManagement;
 
+import rangepricingapplication.OrderManagement.OrderItem;
+
 class ProductsReportTest {
 
 
 
     public static void main(String[] args) {
 
+        Product product1=new Product(10,13,12);
+
         ProductCatalog catalog=new ProductCatalog();
+        OrderItem orderItem1=new OrderItem(product1,10);
 
-        for(int i=0;i<20;i++)
-          catalog.newProduct(10+i,30+2*i,20+2*i);
+          catalog.newProduct(10,30,20);
 
-        ProductsReport productsReport=catalog.generatPerformanceReport();
+       ProductsReport productsReport=new ProductsReport();
+     //  productsReport=catalog.generatPerformanceReport();
 
-        ProductSummary[] productSummaries_pricePer=productsReport.getTop10PricePerf();
-        System.out.println(productSummaries_pricePer);
 
-        ProductSummary[] productSummaries_volume=productsReport.getTop10SalesVolume();
-        System.out.println(productSummaries_volume);
+
+//        ProductSummary[] productSummaries_pricePer=productsReport.getTop10PricePerf();
+//        System.out.println(productSummaries_pricePer);
+//
+//        ProductSummary[] productSummaries_volume=productsReport.getTop10SalesVolume();
+//        System.out.println(productSummaries_volume);
 
     }
 
