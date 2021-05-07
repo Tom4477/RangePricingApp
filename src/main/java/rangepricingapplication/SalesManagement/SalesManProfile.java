@@ -32,6 +32,9 @@ public class SalesManProfile {
         this.business = business;
     }
 
+    public EmployeeProfile getEmployee() {
+        return employee;
+    }
 
     public int calcSalesVolume() {
         int sum=0;

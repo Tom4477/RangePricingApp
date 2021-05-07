@@ -13,7 +13,9 @@ public class EmployeeProfile {
 
     Person person;
 
-    
+    public Person getPerson() {
+        return person;
+    }
 
     public EmployeeProfile(Person p) {
 

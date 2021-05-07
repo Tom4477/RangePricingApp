@@ -20,6 +20,4 @@ public class SalesManDirectory {
         }
         return salereport;
     }
-
-
 }

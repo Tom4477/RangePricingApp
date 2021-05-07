@@ -10,10 +10,11 @@ package rangepricingapplication.Personnel;
  * @author kal bugrara
  */
 public class Person {
-    
+
     String id;
+
     public Person (String id){
-        
+
         this.id = id;
     }
     public String getPersonId(){
@@ -24,5 +25,5 @@ public class Person {
         if(getPersonId().equals(id)) return true;
         return false;
     }
-    
+
 }

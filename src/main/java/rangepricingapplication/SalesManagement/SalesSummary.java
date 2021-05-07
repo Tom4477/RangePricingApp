@@ -9,7 +9,7 @@ public class SalesSummary {
     public SalesSummary(SalesManProfile smp) {
         pricePerformance=smp.calcSalesPricePerf();
         salesvolume=smp.calcSalesVolume();
-       salesMan = smp;
+        salesMan = smp;
     }
 
     public int getSalesvolume() {
@@ -18,9 +18,5 @@ public class SalesSummary {
 
     public int getPricePerformance() {
         return pricePerformance;
-    }
-
-    public void setPricePerformance(int pricePerformance) {
-        this.pricePerformance = pricePerformance;
     }
 }
