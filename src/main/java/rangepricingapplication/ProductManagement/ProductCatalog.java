@@ -29,16 +29,18 @@ public class ProductCatalog {
     }
     public ProductsReport generatPerformanceReport(){
         ProductsReport productsreport = new ProductsReport();
-    
+
         for(Product p: products){
-            
+
             ProductSummary ps = new ProductSummary(p);
             productsreport.addProductSummary(ps);
         }
-        return productsreport; 
-    }  
-    
-    
+        return productsreport;
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
 }
 
 

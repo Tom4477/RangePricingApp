@@ -5,7 +5,10 @@
  */
 package rangepricingapplication.Supplier;
 
+import rangepricingapplication.ProductManagement.Product;
 import rangepricingapplication.ProductManagement.ProductCatalog;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -19,7 +22,14 @@ public class Supplier {
         productcatalog = new ProductCatalog();
 
     }
-
+    public int getOrderSalesVolume() {
+        int sum = 0;
+        ArrayList<Product> products=productcatalog.getProducts();
+        for (Product oi : products) {
+            sum = sum + oi.getOrderSalesVolume();
+        }
+        return sum;
+    }
     public void setProductcatalog(ProductCatalog productcatalog) {
         this.productcatalog = productcatalog;
     }

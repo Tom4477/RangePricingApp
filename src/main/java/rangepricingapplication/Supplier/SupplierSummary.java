@@ -16,5 +16,6 @@ public class SupplierSummary {
 
     public SupplierSummary(Supplier supplier) {
         this.supplier = supplier;
+        salesvolume=supplier.getOrderSalesVolume();
     }
 }
