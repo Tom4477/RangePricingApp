@@ -61,6 +61,13 @@ public class Product {
         }
         return sum;
     }
+    public int getOrderSalesVolume() {
+        int sum = 0;
+        for (OrderItem oi : orderitems) {
+            sum = sum + oi.getOrderItemTotal();     //positive and negative values
+        }
+        return sum;
+    }
 
     @Override
     public String toString() {
@@ -68,7 +75,6 @@ public class Product {
                 "floorPrice=" + floorPrice +
                 ", ceilingPrice=" + ceilingPrice +
                 ", targetPrice=" + targetPrice +
-                ", orderitems=" + orderitems +
                 '}';
     }
 }

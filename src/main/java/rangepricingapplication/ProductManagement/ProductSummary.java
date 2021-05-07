@@ -15,12 +15,14 @@ public class ProductSummary {
     int numberofsalesabovetarget;
     int numberofsalesbelowtarget;
     int salesvalume;
+    int pricePerformance;
     int rank; // will be done later
 
     public ProductSummary(Product p){
 
         numberofsalesabovetarget = p.getNumberOfProductSalesAboveTarget();
-        salesvalume = p.getOrderPricePerformance();
+        salesvalume = p.getOrderSalesVolume();
+        pricePerformance=p.getOrderPricePerformance();
         subjectproduct = p; //keeps track of the product itself not as well;
 
     }
@@ -37,4 +39,7 @@ public class ProductSummary {
         return salesvalume;
     }
 
+    public int getPricePerformance() {
+        return pricePerformance;
+    }
 }
