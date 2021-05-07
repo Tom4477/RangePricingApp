@@ -10,6 +10,14 @@ class ProductsReportTest {
     static int NumOfItem=50;
     public static void main(String[] args) {
 
+        ProductsReportTest productsReportTest=new ProductsReportTest();
+        productsReportTest.genRptForProduct();
+
+
+    }
+
+    public void genRptForProduct()
+    {
         Random random=new Random();
         ProductsReport productsReport=new ProductsReport();
         Order order=new Order();
@@ -25,13 +33,12 @@ class ProductsReportTest {
 
         ProductSummary [] finalSummaryBySV=productsReport.getTop10ProductSalesVolume();
         for(ProductSummary productSummary:finalSummaryBySV)
-        System.out.println(productSummary.salesvalume+"///"+productSummary.subjectproduct.toString());
+            System.out.println(productSummary.salesvalume+"///"+productSummary.subjectproduct.toString());
 
         System.out.println("-----------------------------price Performance--------------------------------------");
 
         ProductSummary [] finalSummaryByPP=productsReport.getTop10ProductPricePerf();
         for(ProductSummary productSummary:finalSummaryByPP)
             System.out.println(productSummary.pricePerformance+"///"+productSummary.subjectproduct.toString());
-
     }
 }

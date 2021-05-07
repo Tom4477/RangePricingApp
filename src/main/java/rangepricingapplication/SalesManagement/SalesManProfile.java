@@ -37,7 +37,7 @@ public class SalesManProfile {
         int sum=0;
         for(OrderItem orderItem:salesProduct)
         {
-           sum+= orderItem.getOrderItemTotal();
+           sum+= orderItem.getQuantity();
         }
 
         return sum;

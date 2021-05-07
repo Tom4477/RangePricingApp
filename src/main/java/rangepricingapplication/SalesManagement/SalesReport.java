@@ -11,5 +11,12 @@ public class SalesReport {
         salesSummaries.add(ss);
     }
    //generate 10 best performing sales people here
+    public SalesSummary[] genTop10SalesBySV()
+    {
+        SalesSummary[] salesSums=new SalesSummary[10];
+
+
+       return salesSums;
+    }
 
 }

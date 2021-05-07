@@ -3,21 +3,17 @@ package rangepricingapplication.SalesManagement;
 public class SalesSummary {
 
     SalesManProfile salesMan;
-    int salesvalume;
+    int salesvolume;
     int pricePerformance;
 
     public SalesSummary(SalesManProfile smp) {
         pricePerformance=smp.calcSalesPricePerf();
-        salesvalume=smp.calcSalesVolume();
+        salesvolume=smp.calcSalesVolume();
        salesMan = smp;
     }
 
-    public int getSalesvalume() {
-        return salesvalume;
-    }
-
-    public void setSalesvalume(int salesvalume) {
-        this.salesvalume = salesvalume;
+    public int getSalesvolume() {
+        return salesvolume;
     }
 
     public int getPricePerformance() {
