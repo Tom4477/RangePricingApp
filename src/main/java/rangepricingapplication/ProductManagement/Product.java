@@ -62,4 +62,13 @@ public class Product {
         return sum;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "floorPrice=" + floorPrice +
+                ", ceilingPrice=" + ceilingPrice +
+                ", targetPrice=" + targetPrice +
+                ", orderitems=" + orderitems +
+                '}';
+    }
 }

@@ -19,38 +19,12 @@ public class ProductsReport {
 
     ArrayList<ProductSummary> productsummarylist;
     public ProductsReport(){
-
+        productsummarylist=new ArrayList<>();
     }
     public void addProductSummary(ProductSummary ps){
 
     productsummarylist.add(ps);
 }
-
-    public ProductSummary[] getTop10PricePerf(){
-        ProductSummary[] productSummaries = new ProductSummary[10];;
-
-       productsummarylist.sort(Comparator.comparingInt(ProductSummary::getNumberAboveTarget));
-
-       for(int i=0;i<10;i++)
-       {
-           productSummaries[i]=productsummarylist.get(i);
-       }
-
-        return productSummaries;
-    }
-
-    public ProductSummary[] getTop10SalesVolume(){
-        ProductSummary[] productSummaries = new ProductSummary[10];;
-
-        productsummarylist.sort(Comparator.comparingInt(ProductSummary::getSalesvalume));
-
-        for(int i=0;i<10;i++)
-        {
-            productSummaries[i]=productsummarylist.get(i);
-        }
-
-        return productSummaries;
-    }
 
     public ProductSummary getTopProductAboveTarget(){
         ProductSummary currenttopproduct = null;
@@ -65,4 +39,6 @@ public class ProductsReport {
                 }
         return currenttopproduct;
     }
+
+
 }

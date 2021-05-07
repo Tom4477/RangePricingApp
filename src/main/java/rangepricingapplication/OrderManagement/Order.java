@@ -18,15 +18,17 @@ public class Order {
     ArrayList<OrderItem> orderitems;
     CustomerProfile customer;
 
-    public Order(){}
-    
+    public Order(){
+        orderitems = new ArrayList();
+    }
+
     public Order(CustomerProfile cp) {
         orderitems = new ArrayList();
         customer = cp;
     }
 
-    public OrderItem newOrderItem(Product p, int q) {
-        OrderItem oi = new OrderItem(p, q);
+    public OrderItem newOrderItem(Product p, int acp,int q) {
+        OrderItem oi = new OrderItem(p,acp, q);
         orderitems.add(oi);
         return oi;
     }
@@ -42,7 +44,7 @@ public class Order {
     public int getOrderPricePerformance() {
         int sum = 0;
         for (OrderItem oi : orderitems) {
-            sum = sum + oi.calculatePricePerformance();     //positive and negative values       
+            sum = sum + oi.calculatePricePerformance();     //positive and negative values
         }
         return sum;
     }

@@ -1,31 +1,30 @@
 package rangepricingapplication.ProductManagement;
 
+import rangepricingapplication.OrderManagement.Order;
 import rangepricingapplication.OrderManagement.OrderItem;
+
+import java.util.Random;
 
 class ProductsReportTest {
 
-
-
+    static int NumOfItem=10;
     public static void main(String[] args) {
 
-        Product product1=new Product(10,13,12);
+        Product testPro=new Product(10,30,20);
+        Random random=new Random();
+        ProductsReport productsReport=new ProductsReport();
+        Order order=new Order();
 
-        ProductCatalog catalog=new ProductCatalog();
-        OrderItem orderItem1=new OrderItem(product1,10);
+        for(int i=1;i<=NumOfItem;i++)
+        {
+            OrderItem orderItem=order.newOrderItem(testPro,15+random.nextInt(10),random.nextInt(20));
+            System.out.println(orderItem.isActualAboveTarget());
+            ProductSummary productSummary =new ProductSummary(testPro);
+            productsReport.addProductSummary(productSummary);
+        }
 
-          catalog.newProduct(10,30,20);
-
-       ProductsReport productsReport=new ProductsReport();
-     //  productsReport=catalog.generatPerformanceReport();
-
-
-
-//        ProductSummary[] productSummaries_pricePer=productsReport.getTop10PricePerf();
-//        System.out.println(productSummaries_pricePer);
-//
-//        ProductSummary[] productSummaries_volume=productsReport.getTop10SalesVolume();
-//        System.out.println(productSummaries_volume);
+        ProductSummary finalSummary=productsReport.getTopProductAboveTarget();
+        System.out.println(finalSummary.getNumberAboveTarget());
 
     }
-
 }

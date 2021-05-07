@@ -37,7 +37,4 @@ public class ProductSummary {
         return salesvalume;
     }
 
-    public void setSalesvalume(int salesvalume) {
-        this.salesvalume = salesvalume;
-    }
 }

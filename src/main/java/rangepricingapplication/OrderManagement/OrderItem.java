@@ -16,13 +16,14 @@ public class OrderItem {
     Product selectedproduct;
     int actualPrice;
     int quantity;
-    
-    public OrderItem(Product p, int q) {
+
+    public OrderItem(Product p, int actualP,int q) {
         selectedproduct = p;
         p.addOrderItem(this); //make sure product links back to the item
+        actualPrice=actualP;
         quantity = q;
     }
-    
+
     public int getOrderItemTotal() {
         return actualPrice * quantity;
     }
@@ -47,4 +48,13 @@ public class OrderItem {
         else return false;
 
 }
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "selectedproduct=" + selectedproduct +
+                ", actualPrice=" + actualPrice +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
