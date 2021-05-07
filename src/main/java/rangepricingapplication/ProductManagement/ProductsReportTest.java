@@ -7,7 +7,7 @@ import java.util.Random;
 
 class ProductsReportTest {
 
-    static int NumOfItem=20;
+    static int NumOfItem=50;
     public static void main(String[] args) {
 
         Random random=new Random();
@@ -17,7 +17,7 @@ class ProductsReportTest {
         for(int i=1;i<=NumOfItem;i++)
         {
             Product testPro=new Product(10+random.nextInt(10),30+random.nextInt(10),20+random.nextInt(10));
-            OrderItem orderItem=order.newOrderItem(testPro,15+random.nextInt(10),random.nextInt(20));
+            OrderItem orderItem=order.newOrderItem(testPro,20+random.nextInt(10),random.nextInt(20));
             ProductSummary productSummary =new ProductSummary(testPro);
             productsReport.addProductSummary(productSummary);
         }

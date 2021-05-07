@@ -27,6 +27,11 @@ public class OrderItem {
     public int getOrderItemTotal() {
         return actualPrice * quantity;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
     //returns positive if seller is making higher margin than target
     //returns negative if seller is making lower margin than target
     //otherwise zero meaning neutral

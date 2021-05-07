@@ -64,7 +64,7 @@ public class Product {
     public int getOrderSalesVolume() {
         int sum = 0;
         for (OrderItem oi : orderitems) {
-            sum = sum + oi.getOrderItemTotal();     //positive and negative values
+            sum = sum + oi.getQuantity();     //positive and negative values
         }
         return sum;
     }
