@@ -17,6 +17,10 @@ public class Supplier {
     public Supplier(String n){
         name = n;
         productcatalog = new ProductCatalog();
-        
+
+    }
+
+    public void setProductcatalog(ProductCatalog productcatalog) {
+        this.productcatalog = productcatalog;
     }
 }
